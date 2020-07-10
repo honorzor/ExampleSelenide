@@ -32,7 +32,7 @@ public class AuthorizationPage {
     }
 
     @Step(value = "click enter button")
-    public void pressEnterButton() {
+    private void pressEnterButton() {
         enterButton.shouldBe(visible).pressEnter();
     }
 
