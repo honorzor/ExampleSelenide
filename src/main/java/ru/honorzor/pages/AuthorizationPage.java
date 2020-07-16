@@ -2,7 +2,6 @@ package ru.honorzor.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import io.qameta.allure.Story;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$x;
@@ -19,7 +18,7 @@ public class AuthorizationPage {
 
     private SelenideElement logoutButton = $x("//*[@id=\"logout\"]"); // Кнопка "Выйти" в профиль клиента.
 
-    @Story(value = "Test with correct credentials")
+
     public void authClient(String email, String password) {
         openFormAuth();
         fillFieldEmail(email);
@@ -33,17 +32,17 @@ public class AuthorizationPage {
     }
 
     @Step(value = "click enter button")
-    private void pressEnterButton() {
+    public void pressEnterButton() {
         enterButton.shouldBe(visible).pressEnter();
     }
 
     @Step(value = "fill password {0}")
-    private void fillPasswordField(String password) {
+    public void fillPasswordField(String password) {
         fieldPassword.setValue(password);
     }
 
     @Step(value = "fill email {0}")
-    private void fillFieldEmail(String email) {
+    public void fillFieldEmail(String email) {
         fieldEmail.setValue(email);
     }
 
@@ -53,7 +52,7 @@ public class AuthorizationPage {
     }
 
     @Step(value = "open window for registration or login")
-    private void openFormAuth() {
+    public void openFormAuth() {
         openWindowAuth.shouldBe(visible).click();
     }
 

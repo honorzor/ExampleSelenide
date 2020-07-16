@@ -2,7 +2,6 @@ package ru.honorzor.pages;
 
 import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
-import io.qameta.allure.Story;
 
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
@@ -22,7 +21,7 @@ public class ProfilePage {
     private SelenideElement runFreeTestButton = $("[data-testid  = \"Checkout start button\" ]");
     private SelenideElement successTextAfterRunTest = $("[class = \"sc-itybZL gLzIYc\"]");
 
-    @Story("Create new test client from profile")
+
     public void createTest(String nameTest, String site, String segment, String answer) {
         clickNewTestButton();
         fillFieldNameTest(nameTest);
