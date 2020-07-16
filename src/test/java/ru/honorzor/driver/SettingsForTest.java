@@ -24,7 +24,7 @@ public class SettingsForTest {
         SelenideLogger.addListener("allure", new AllureSelenide());
         Configuration.holdBrowserOpen = false;
         Configuration.browser = "chrome";
-        Configuration.headless = false;
+        Configuration.headless = true;
         Configuration.reportsFolder = "allure-results";
         open(URL);
     }
