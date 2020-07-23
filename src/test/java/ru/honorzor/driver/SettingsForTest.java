@@ -12,7 +12,6 @@ import org.testng.annotations.*;
 import java.io.File;
 import java.io.IOException;
 
-import static com.codeborne.selenide.Selenide.open;
 import static com.codeborne.selenide.WebDriverRunner.closeWebDriver;
 
 @Listeners({ScreenShooter.class})
@@ -22,19 +21,22 @@ public class SettingsForTest {
     @BeforeClass
     public void openSession() {
         SelenideLogger.addListener("allure", new AllureSelenide());
-        Configuration.holdBrowserOpen = false;
+        Configuration.holdBrowserOpen = true;
         Configuration.browser = "chrome";
-        Configuration.headless = true;
+        Configuration.headless = false;
         Configuration.reportsFolder = "allure-results";
-        open(URL);
+        //open(URL);
     }
 
     @AfterClass
     public void closeSession() {
         SelenideLogger.removeListener("allure");
-        closeWebDriver();
     }
 
+    @AfterTest
+    public void closeWeb() {
+        closeWebDriver();
+    }
 
     @AfterMethod
     public void tearDown() throws IOException {
