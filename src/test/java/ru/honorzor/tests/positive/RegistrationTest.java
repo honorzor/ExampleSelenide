@@ -1,5 +1,6 @@
 package ru.honorzor.tests.positive;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.testng.Assert;
@@ -22,7 +23,7 @@ public class RegistrationTest extends SettingsForTest {
     private final String email = "testfor" + randomNumber + "@1secmail.com";
     private static final String EXCEPTEDTEXTAFTERREGISTRATION = "Спасибо за регистрацию на UXCrowd!";
 
-    @Epic(value = "Registration with correct credentials")
+    @Description(value = "Registration with correct credentials")
     @Test(priority = 1)
     public void registrationTest() {
         registrationPage.registrationClient(name, position, company, email);
@@ -30,7 +31,7 @@ public class RegistrationTest extends SettingsForTest {
         Assert.assertEquals(textAfterRegistration, EXCEPTEDTEXTAFTERREGISTRATION);
     }
 
-    @Epic(value = "Registration with incorrect credentials")
+    @Description(value = "Registration with incorrect credentials")
     @Test(priority = 2)
     public void registrationClient() {
         registrationPage.registrationClient(name, position, company, "testforregistration248@1secmail.com");

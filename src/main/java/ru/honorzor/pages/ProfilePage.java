@@ -10,15 +10,25 @@ public class ProfilePage {
 
 
     private SelenideElement newTestButton = $("[class = \"item_menu_logo new_test\"]");
+
     private SelenideElement fieldForNameTest = $("[data-testid  = \"Test name input\" ]");
+
     private SelenideElement fieldForAddressSite = $("[data-testid  = \"Address site input\" ]");
+
     private SelenideElement goToAuditButton = $("[data-testid  = \"Submit button\" ]");
+
     private SelenideElement fieldNamedSegment = $("[data-testid  = \"Segment name input 0\" ]");
+
     private SelenideElement toQuestButton = $("[data-testid  = \"Tasks button\" ]");
+
     private SelenideElement fieldAnswerVoice = $("[data-testid  = \"Tasks task question\" ]");
+
     private SelenideElement addAnswerButton = $("[data-testid  = \"Tasks submit task\" ]");
+
     private SelenideElement checkAndRunButton = $("[data-testid  = \"Check button\" ]");
+
     private SelenideElement runFreeTestButton = $("[data-testid  = \"Checkout start button\" ]");
+
     private SelenideElement successTextAfterRunTest = $("[class = \"sc-itybZL gLzIYc\"]");
 
 

@@ -1,5 +1,6 @@
 package ru.honorzor.tests.positive;
 
+import io.qameta.allure.Description;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.testng.Assert;
@@ -17,7 +18,7 @@ public class AuthorizationTest extends SettingsForTest {
     private final static String PASSWORDCORRECT = "PqxPZR";
     private final static String PASSWORDINCORRECT = "QQQQ";
 
-    @Epic(value = "Test with correct credentials")
+    @Description(value = "Test with correct credentials")
     @Test
     public void authClient() {
         authorizationPage.authClient(EMAIL, PASSWORDCORRECT);
@@ -27,7 +28,7 @@ public class AuthorizationTest extends SettingsForTest {
     }
 
 
-    @Epic(value = "Test with incorrect credentials")
+    @Description(value = "Test with incorrect credentials")
     @Test
     public void authClientWithIncorrect() {
         authorizationPage.openFormAuth();

@@ -4,6 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$x;
 
 public class AuthorizationPage {
@@ -16,7 +17,7 @@ public class AuthorizationPage {
 
     private SelenideElement enterButton = $x("//*[@id=\"form_auth\"]/button"); // Кнопка "Войти" в профиль клиента.
 
-    private SelenideElement logoutButton = $x("//*[@id=\"logout\"]"); // Кнопка "Выйти" в профиль клиента.
+    private SelenideElement logoutButton = $("block_exit_text text_settings"); // Кнопка "Выйти" в профиль клиента.
 
 
     public void authClient(String email, String password) {
