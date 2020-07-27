@@ -4,8 +4,7 @@ import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.visible;
-import static com.codeborne.selenide.Selenide.$;
-import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.*;
 
 public class AuthorizationPage {
 
@@ -55,6 +54,11 @@ public class AuthorizationPage {
     @Step(value = "open window for registration or login")
     public void openFormAuth() {
         openWindowAuth.shouldBe(visible).click();
+    }
+
+    @Step(value = "open browser")
+    public void openSession (String URL){
+        open(URL);
     }
 
 }

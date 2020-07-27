@@ -7,7 +7,10 @@ import com.codeborne.selenide.testng.ScreenShooter;
 import com.google.common.io.Files;
 import io.qameta.allure.Attachment;
 import io.qameta.allure.selenide.AllureSelenide;
-import org.testng.annotations.*;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.Listeners;
 
 import java.io.File;
 import java.io.IOException;
@@ -31,10 +34,6 @@ public class SettingsForTest {
     @AfterClass
     public void closeSession() {
         SelenideLogger.removeListener("allure");
-    }
-
-    @AfterTest
-    public void closeWeb() {
         closeWebDriver();
     }
 

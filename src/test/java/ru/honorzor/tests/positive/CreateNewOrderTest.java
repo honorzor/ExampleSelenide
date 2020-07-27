@@ -1,6 +1,6 @@
 package ru.honorzor.tests.positive;
 
-import io.qameta.allure.Epic;
+import io.qameta.allure.Description;
 import io.qameta.allure.Story;
 import org.testng.Assert;
 import org.testng.annotations.BeforeClass;
@@ -26,7 +26,6 @@ public class CreateNewOrderTest extends SettingsForTest {
     private static final String WEBSITE = "codewars.com";
     private static final String SEGMENTNAME = "Segment";
     private static final String ANSWER = "how r u";
-    private static final String URL = "https://test.uxcrowd.ru/";
 
     private final int randomNumber = new Random().nextInt(1000);
     private final String login = "registartionnewclient" + randomNumber + "@1secmail.com";
@@ -41,7 +40,7 @@ public class CreateNewOrderTest extends SettingsForTest {
         authorizationPage.authClient(login, passwordFromMessage);
     }
 
-    @Epic(value = "Create new test form free client")
+    @Description(value = "Create new test form free client")
     @Test
     public void createNewTest() {
         profilePage.createTest(TESTNAME, WEBSITE, SEGMENTNAME, ANSWER);
